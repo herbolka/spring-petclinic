@@ -2,7 +2,7 @@ pipeline {
 agent any 
 tools {
 git 'Default'
-maven 'newmaven'
+maven 'Test'
 }
 stages {
 stage('Clone') {
