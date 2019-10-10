@@ -19,7 +19,7 @@ sh 'mvn package'
 stage('Deploy') {
 steps {
 rtUpload (
-serverId: 'artifactoryadr',
+serverId: 'artifactory',
 spec: '''{
 "files": [
 {
