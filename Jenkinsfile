@@ -2,13 +2,13 @@ pipeline {
 agent any 
 tools {
 git 'Default'
-maven 'mymaven'
+maven 'newmaven'
 }
 stages {
 stage('Clone') {
 steps {
 git branch: 'master',
-url: 'https://yoko.ukrtux.com/rudnykrd/spring-petclinic.git'
+url: 'https://github.com/herbolka/spring-petclinic'
 }
 }
 stage('Build') {
@@ -19,12 +19,12 @@ sh 'mvn package'
 stage('Deploy') {
 steps {
 rtUpload (
-serverId: 'artifactoryaddress',
+serverId: 'artifactoryadr',
 spec: '''{
 "files": [
 {
 "pattern": "*.jar",
-"target": "test/com/epam-labs/rudnyk/LessonFourPetClinic/"
+"target": "test/com/epamlabs/herbolka/Lesson4Petclinic/"
 }
 ]
 }
